@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image "papitoio/node-wd"}
+        docker { image "alburilli/node-wd"}
     }
     stages {
         stage('Build') {
