@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image "alburilli/node-wd"}
+        docker {
+             image "alburilli/node-wd"
+             args "--network=skynet"
+             }
     }
     stages {
         stage('Build') {
