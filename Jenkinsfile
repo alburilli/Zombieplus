@@ -1,17 +1,18 @@
 pipeline {
     agent {
-        docker {
-             image "qaninja/node-wd"
-             args "--network=skynet"
-             }
+        docker { 
+            image "alburilli/node-wd"
+            args "--network=skynet"
+        }
     }
     stages {
         stage('Build') {
             steps {
                 sh "npm install"
             }
+            
         }
-        stage('tests') {
+        stage('Tests') {
             steps {
                 sh "npm run test:ci"
             } 
